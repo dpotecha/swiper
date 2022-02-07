@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://pixijs.download/release/pixi.js"></script>
+  <title>Swiper</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #3a3a3a;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #test {
+      position: absolute;
+      width: 80vw;
+      height: 90vh;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 50;
+    }
+
+    .canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper {
+      width: 80vw;
+      height: 90vh;
+    }
+
+    .img {
+      display: block;
+      width: 45%;
+      height: 60%;
+      object-fit: cover;
+      align-self: flex-end;
+    }
+
+
+    .slide-content {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      font-family: arial;
+    }
+
+    .slide-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 144px 24px 96px;
+
+    }
+
+    .slide-num {
+      position: absolute;
+      font-size: 48px;
+      left: 30px;
+      top: 25px;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 72px;
+    }
+
+    p {
+      font-size: 32px;
+      line-height: 1.5em;
+    }
+
+    .slider-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition-property: opacity;
+    }
+
+    .slider-bg-peach {
+      background: peachpuff;
+    }
+
+    .slider-bg-green {
+      background: rgb(179, 228, 213);
+    }
+
+    .slider-bg-pink {
+      background: rgb(204, 176, 202);
+    }
+
+    .slider-bg-blue {
+      background: rgb(212, 216, 176);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <canvas id="test"></canvas> -->
+
+  <div class="container">
+    <div class="swiper ">
+      <div class="swiper-wrapper wrapper">
+        <!-- <div class="slider-bg slider-bg-peach"></div>
+        <div class="slider-bg slider-bg-green"></div>
+        <div class="slider-bg slider-bg-pink"></div>
+        <div class="slider-bg slider-bg-blue"></div>
+        <div class="swiper-slide slide">
+          <div class="slide-content">
+            <p class="slide-num">1.</p>
+            <img src="img/1.jpg" alt="" class="img">
+            <div class="slide-text">
+              <h1>Title 1</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptate exercitationem quas eum fugit
+                deleniti pariatur minima aliquid dolorum inventore in officiis, doloremque voluptas nisi, numquam quos
+                doloribus ipsa. Aperiam!</p>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="swiper-slide slide">
+          <div class="slide-content">
+            <p class="slide-num">2.</p>
+            <img src="img/2.jpg" alt="" class="img">
+            <div class="slide-text">
+              <h1>Title 2</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptate exercitationem quas eum fugit
+                deleniti pariatur minima aliquid dolorum inventore in officiis, doloremque voluptas nisi, numquam quos
+                doloribus ipsa. Aperiam!</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide slide">
+          <div class="slide-content">
+            <p class="slide-num">3.</p>
+            <img src="img/3.jpg" alt="" class="img">
+            <div class="slide-text">
+              <h1>Title 3</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptate exercitationem quas eum fugit
+                deleniti pariatur minima aliquid dolorum inventore in officiis, doloremque voluptas nisi, numquam quos
+                doloribus ipsa. Aperiam!</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide slide">
+          <div class="slide-content">
+            <p class="slide-num">4.</p>
+            <img src="img/4.jpg" alt="" class="img">
+            <div class="slide-text">
+              <h1>Title 4</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptate exercitationem quas eum fugit
+                deleniti pariatur minima aliquid dolorum inventore in officiis, doloremque voluptas nisi, numquam quos
+                doloribus ipsa. Aperiam!</p>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="swiper-slide slide">
+          <canvas id="slide1" class="canvas"></canvas>
+        </div>
+        <div class="swiper-slide slide">
+          <canvas id="slide2" class="canvas"></canvas>
+        </div>
+        <div class="swiper-slide slide">
+          <canvas id="slide3" class="canvas"></canvas>
+        </div>
+        <div class="swiper-slide slide">
+          <canvas id="slide4" class="canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="js.js"></script>
+  <script src="pixi.js"></script>
+</body>
+
+</html>

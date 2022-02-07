@@ -11,7 +11,6 @@ const swiper = new Swiper(".swiper", {
       for (let i = 0; i < slides.length; i++) {
         let elSlide = slides[i];
         elSlide.style.opacity = 0;
-        elSlide.style.position = "absolute";
         elSlide.style.transitionProperty = "opacity, transform";
 
         if (i == this.activeIndex) {
@@ -24,8 +23,8 @@ const swiper = new Swiper(".swiper", {
 
       for (let i = 0; i < slides.length; i++) {
         let elSlide = slides[i];
-        let offset = elSlide.progress * this.params.shift;
-        let tx = -offset;
+        let offset = elSlide.swiperSlideOffset;
+        let tx = -offset - elSlide.progress * this.params.shift;
 
         let slideOpacity = Math.max(1 - Math.abs(elSlide.progress), 0);
         elSlide.style.opacity = slideOpacity;
